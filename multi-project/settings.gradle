@@ -1,0 +1,8 @@
+rootProject.name = 'multi-project'
+include 'base'
+include 'webcore'
+include 'webapp'
+include 'webmanagement'
+include 'weball:weball'
+findProject(':weball:weball')?.name = 'weball/weball'
+
