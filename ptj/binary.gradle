@@ -1,0 +1,81 @@
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'java'
+
+group = GROUP
+version =  VERSION_NAME
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            //GAV配置
+            groupId GROUP
+            artifactId ARTIFACT_ID
+            version VERSION_NAME
+            //pom相关信息
+            pom.withXml {
+                Node root = asNode()
+                root.appendNode('name', ARTIFACT_ID)
+                root.appendNode('description', POM_DESCRIPTION)
+                root.appendNode('url', POM_URL)
+
+                def issues = root.appendNode('issueManagement')
+                issues.appendNode('system', 'github')
+                issues.appendNode('url', ISSUE_URL)
+
+                def scm = root.appendNode('scm')
+                scm.appendNode('url', POM_SCM_URL)
+                scm.appendNode('connection', POM_SCM_CONNECTION)
+                scm.appendNode('developerConnection', POM_SCM_DEV_CONNECTION)
+
+                def license = root.appendNode('licenses').appendNode('license')
+                license.appendNode('name', POM_LICENCE_NAME)
+                license.appendNode('url', POM_LICENCE_URL)
+                license.appendNode('distribution', POM_LICENCE_DIST)
+            }
+        }
+    }
+}
+
+def getBintrayUserProperty() {
+    return hasProperty('BINTRAY_USER') ? BINTRAY_USER : ""
+}
+
+def getBintrayApiKeyProperty() {
+    return hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : ""
+}
+
+// gradle bintrayUpload
+bintray {
+    user = getBintrayUserProperty()
+    key = getBintrayApiKeyProperty()
+    publications = ['mavenJava']
+    configurations = ['archives']
+    dryRun = false
+    publish = true
+    pkg {
+        //你在bintray建立的仓库类型
+        repo = 'maven'
+        //包名
+        name = ARTIFACT_ID
+        //描述
+        desc = POM_DESCRIPTION
+        //站点地址
+        websiteUrl = POM_URL
+        //缺陷提交地址
+        issueTrackerUrl = ISSUE_URL
+        //版本库地址
+        vcsUrl = GIT_URL
+        //许可证
+        licenses = ['Apache-2.0']
+        labels = ['gradle', 'tiger']
+        publicDownloadNumbers = true
+
+        version {
+            //版本号
+            name = VERSION_NAME
+            //版本描述
+            desc = POM_DESCRIPTION
+        }
+    }
+}
