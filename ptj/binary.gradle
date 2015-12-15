@@ -5,6 +5,23 @@ apply plugin: 'java'
 group = GROUP
 version =  VERSION_NAME
 
+def getBintrayUserProperty() {
+    return hasProperty('BINTRAY_USER') ? BINTRAY_USER : ""
+}
+
+def getBintrayApiKeyProperty() {
+    return hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : ""
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -12,6 +29,11 @@ publishing {
             groupId GROUP
             artifactId ARTIFACT_ID
             version VERSION_NAME
+
+            from components.java
+            artifact sourceJar
+            artifact javadocJar
+
             //pom相关信息
             pom.withXml {
                 Node root = asNode()
@@ -36,21 +58,12 @@ publishing {
         }
     }
 }
-
-def getBintrayUserProperty() {
-    return hasProperty('BINTRAY_USER') ? BINTRAY_USER : ""
-}
-
-def getBintrayApiKeyProperty() {
-    return hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : ""
-}
-
 // gradle bintrayUpload
 bintray {
     user = getBintrayUserProperty()
     key = getBintrayApiKeyProperty()
     publications = ['mavenJava']
-    configurations = ['archives']
+//    configurations = ['archives']
     dryRun = false
     publish = true
     pkg {
