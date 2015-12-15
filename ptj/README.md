@@ -53,6 +53,42 @@ buildscript {
 //你的bintray.gradle的相对路径
 apply from: 'binary.gradle'
 ```
+gradle.properties
+```groovy
+#JCENTER用户名和API key
+BINTRAY_USER=<YOUR USERNAME>
+BINTRAY_APIKEY=<YOUR APIKEY>
+
+#GAV
+GROUP=cn.pkaq
+ARTIFACT_ID=ptj.tiger
+VERSION_NAME=0.1.0
+
+#项目地址相关
+POM_URL=http://pkaq.github.io
+POM_SCM_URL=https://github.com/pkaq/GradleSide
+POM_SCM_CONNECTION=git@github.com:pkaq/GradleSide.git
+POM_SCM_DEV_CONNECTION=git@github.com:pkaq/GradleSide.git
+#项目相关信息
+GIT_URL=https://github.com/pkaq/GradleSide.git
+ISSUE_URL=https://github.com/pkaq/GradleSide/issues
+
+POM_PACKAGING=jar
+POM_DESCRIPTION=Tiger say hi~
+
+#开源协议
+POM_LICENCE_NAME=The Apache Software License, Version 2.0
+POM_LICENCE_URL=http://www.apache.org/licenses/LICENSE-2.0.txt
+POM_LICENCE_DIST=repo
+
+#开发者信息
+POM_DEVELOPER_ID=pkaq
+POM_DEVELOPER_NAME=Frank.W
+POM_DEVELOPER_EMAIL=pkaq@msn.com
+POM_DEVELOPER_URL=http://pkaq.github.io
+
+
+```
 
 ######binary.gradle
 ```groovy
