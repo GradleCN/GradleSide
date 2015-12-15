@@ -1,3 +1,5 @@
+//上传到jcenter至少需要四个文件，除了打包的jar之外，
+//还需要pom和javadoc，source，否则是通不过jcenter审核的。
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'java'
@@ -13,6 +15,7 @@ def getBintrayApiKeyProperty() {
     return hasProperty('BINTRAY_APIKEY') ? BINTRAY_APIKEY : ""
 }
 
+//根据jcenter的审核要求 必须包含sourceJar和docJar
 task sourceJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
