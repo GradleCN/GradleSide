@@ -1,0 +1,12 @@
+group 'pkaq'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "cn.pkaq:ptj.tiger:+"
+}
