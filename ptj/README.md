@@ -2,7 +2,6 @@
 具体步骤 这里写的已经非常明白了  并且提供了多个示例
 https://github.com/bintray/gradle-bintray-plugin
 
-下面是上面链接的汉化版本。
 
 -------
 上传到jcenter至少需要四个文件，除了打包的jar之外，
