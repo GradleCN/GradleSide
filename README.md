@@ -7,3 +7,4 @@ Gradle 示例大全
 4.properties : 使用gradle操作properties
 5.specifyName ： 打指定名称和版本号的jar包
 6.theothersinjava : 打包src/main/java中的资源文件
+7.sourcesets : 自定义项目目录结构
