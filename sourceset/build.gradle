@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/xxx/java']
+        }
+        //没错 我同时把resource指向了java目录 这样就可以收录java目录中的资源文件了
+        resources {
+            srcDirs = ['src/xxx/resources','src/xxx/java']
+        }
+    }
+}
