@@ -6,6 +6,8 @@ sourceSets {
             srcDirs = ['src/xxx/java']
         }
         //没错 我同时把resource指向了java目录 这样就可以收录java目录中的资源文件了
+        //注意：gradle会以你指定的目录为根 去寻找当前目录以及子目录下的资源文件
+        //如果你想带路径复制 最好不要指定到具体的子包（如:src/main/java/mybatis/mapper/module） 不然资源会位于根目录下
         resources {
             srcDirs = ['src/xxx/resources','src/xxx/java']
         }
