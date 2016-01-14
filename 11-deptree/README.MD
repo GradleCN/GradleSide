@@ -12,3 +12,5 @@ gradle  dependencies
 gradle dependencyInsight  --dependency depName
 
 ```
+
+此示例内容参见userguide(ver.2.9)中的11.6.4-11.6.5章节
