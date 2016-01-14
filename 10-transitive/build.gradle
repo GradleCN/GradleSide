@@ -1,0 +1,29 @@
+dependencies {
+
+	// 法 . 0 . 使用@jar
+	compile 'group:artifact:version@jar'
+
+    // 法 . 1 . 不需要传递依赖
+    compile('group:artifact:version') {
+        transitive = false
+    }
+    // 法 . 2 . 不需要传递依赖
+    compile group: 'g', name: 'a, version:'v', transitive: false
+
+    // 法 . 3 . 排除某个间接依赖
+    compile('group:artifact:version') {
+        exclude 'org.slf4j:slf4j-api'
+    }
+
+
+    //下面是大招
+    //法 . 4 . 全局禁止依赖传递
+    //configurations {
+    // all*.transitive = false
+	//}
+
+	//法 . 5 . 全局禁止部分依赖传递
+	//configurations {  
+    //	all*.exclude group: 'group'  
+	//}  
+}
