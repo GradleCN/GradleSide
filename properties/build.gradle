@@ -35,4 +35,12 @@ task updateProperties <<{
 	}
 
 }
-
+//读取-P属性
+task BigPprop <<{	
+	println "${keyp}"
+	
+}
+//读取-D属性
+task BigDprop <<{
+	println System.properties['keyd']
+}
