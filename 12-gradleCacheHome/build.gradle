@@ -1,0 +1,10 @@
+apply plugin : 'java'
+repositories {
+   jcenter()
+   mavenCentral()
+}
+
+dependencies {
+    compile   "org.springframework:spring-webmvc:+"    
+}
+
