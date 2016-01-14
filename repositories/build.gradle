@@ -1,0 +1,45 @@
+//Gradle 1.8+
+repositories {
+	//使用Maven本地缓存
+	mavenLocal()
+
+
+
+   //使用jcenter
+   jcenter()
+   //使用中央仓库
+   mavenCentral()
+
+   //使用开源中国的maven库
+   maven { 
+   	url "http://maven.oschina.net/content/groups/public/" 
+   	name = "开源中国的maven库"	
+   }
+
+   //使用spring的maven库,name是可选的 我也可以不指定name
+   maven { url"https://repo.spring.io/libs-release" }
+
+
+	//使用maven仓库，什么？有权限控制？
+   maven {
+        url 'http://my.server/'
+	    credentials {
+	        username = 'username'
+	        password = 'password'
+	    }
+   }
+    //使用ivy仓库
+   ivy {
+        artifactPattern '/some/dir/[organisation]/[module]-[revision].[ext]'
+   }
+
+   //恩。。。使用文件夹做仓库
+   flatDir name: 'libs', dirs: "$projectDir/libs"
+   //当然 。。。 也可以指定多个
+   flatDir {
+            dirs '../project-files', '/volumes/shared-libs'
+            name = '这个也是可以指定name的'
+    }	
+
+    //写在最后，没错 你看到了 可以添加多个，这就是添加多个仓库的方式
+}
