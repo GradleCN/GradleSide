@@ -4,6 +4,7 @@ Gradle 示例大全
 示例的内容对你而言或许过于基础，或许觉得冷门，但。。。   
 这些问题撸主都曾经真真的回答过 遇到过   
 
+0.peer : peer not authenticated 错误的究极解决之道   
 1.multi-project : gradle多项目示例   
 2.depbase : 最简单的加载依赖示例   
 3.ptj : 如何使用Gradle发布自己的项目到Jcenter   
