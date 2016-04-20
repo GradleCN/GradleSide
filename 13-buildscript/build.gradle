@@ -1,0 +1,27 @@
+//应用插件
+apply plugin: 'java'
+//定义扩展属性(可选)
+ext {
+	foo="foo"
+}
+//定义局部变量(可选)
+def bar="bar"
+
+//修改项目属性(可选)
+group 'pkaq'
+version '1.0-SNAPSHOT'
+
+//定义仓库
+repositories {
+    jcenter()
+}
+
+//定义依赖
+dependencies {
+    compile "cn.pkaq:ptj.tiger:+"
+}
+
+//自定义任务(可选)
+task printFoobar {
+	println "${foo}__${bar}"
+}
