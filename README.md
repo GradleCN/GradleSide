@@ -22,5 +22,7 @@ Gradle 示例大全
 |11.deptree | gradle依赖树-以树形结构查看相关依赖  |
 |12.gradleCacheHome | 更改gradle的缓存目录   |
 |13.buildscript|一个简单的脚本示例 |
-|14.multi-flat|关于平级的多项目 |
+|14.buildscript|对依赖版本号进行统一管理 |
+|？.multi-flat|关于平级的多项目 |
+
 
