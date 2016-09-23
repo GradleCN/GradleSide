@@ -51,12 +51,12 @@ maven {
 
 maven {
 	url "http://repository.jboss.org/nexus/content/groups/public/"
-	name = "jboos"
+	name = "jboss"
 }
 
 maven {
 	url "https://repository.jboss.org/nexus/content/repositories/releases/"
-	name = "jboosJBPM"
+	name = "jbossJBPM"
 }
 
 maven {
