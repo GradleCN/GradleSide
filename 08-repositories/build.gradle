@@ -3,10 +3,9 @@ repositories {
 	//使用Maven本地缓存
 	mavenLocal()
 
-
-
    //使用jcenter
    jcenter()
+   
    //使用中央仓库
    mavenCentral()
 
