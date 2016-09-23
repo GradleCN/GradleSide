@@ -1,6 +1,7 @@
 apply plugin: 'java'
 
-jar {
+
+war {
    //指定包名,没错  这样也行 多查API
    baseName = 'supprise'
 
