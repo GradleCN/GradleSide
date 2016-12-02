@@ -23,6 +23,7 @@ Gradle 示例大全
 |12.gradleCacheHome | 更改gradle的缓存目录   |
 |13.buildscript|一个简单的脚本示例 |
 |14.buildscript|对依赖版本号进行统一管理 |
+|15.multi-project-springboot| 多模块项目之 - 结合spring boot构建采用公共jsp页面的多模块项目 |
 |？.multi-flat|关于平级的多项目 |
 
 
