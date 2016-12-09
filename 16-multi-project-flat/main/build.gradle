@@ -1,0 +1,10 @@
+apply plugin: 'war'
+
+dependencies {
+    compile  project(':base')
+}
+
+subprojects {
+    group = 'org.pkaq.gradle.multi.flat'
+    version = '1.0'
+}
