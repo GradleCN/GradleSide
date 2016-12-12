@@ -25,6 +25,7 @@ Gradle 示例大全
 |14.buildscript|对依赖版本号进行统一管理 |
 |15.multi-project-springboot| 多模块项目之 - 结合spring boot构建采用公共jsp页面的多模块项目 |
 116.multi-project-flat | 多模块项目之 - 采用水平布局的多模块(项目)项目构建|
+117.multi-project-central | 多模块项目之 - 采用集中化配置的多模块(项目)项目构建|
 |？.multi-flat|关于平级的多项目 |
 
 
