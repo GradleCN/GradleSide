@@ -24,8 +24,10 @@ Gradle 示例大全
 |13.buildscript|一个简单的脚本示例 |
 |14.buildscript|对依赖版本号进行统一管理 |
 |15.multi-project-springboot| 多模块项目之 - 结合spring boot构建采用公共jsp页面的多模块项目 |
-116.multi-project-flat | 多模块项目之 - 采用水平布局的多模块(项目)项目构建|
-117.multi-project-central | 多模块项目之 - 采用集中化配置的多模块(项目)项目构建|
-|？.multi-flat|关于平级的多项目 |
+|16.multi-project-flat | 多模块项目之 - 采用水平布局的多模块(项目)项目构建|
+|17.multi-project-central | 多模块项目之 - 采用集中化配置的多模块(项目)项目构建,同时包括在settings文件中添加自定义代码|
+|18.env-artifact|java项目打不同环境包|
+|19.checkstyle|代码规范检查|
+|20.proguard|混淆|
 
 
