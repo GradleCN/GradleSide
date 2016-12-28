@@ -37,9 +37,11 @@
 
 **11.specifyName**   打指定名称和版本号的jar包   
 
---------------分隔线----------------
-这些是未发布的示例
-12.env-artifactjava项目打不同环境包
-13.checkstyle代码规范检查
-14.proguard混淆
+--------------分隔线----------------    
+这些是未发布的示例   
+12.env-artifactjava项目打不同环境包  
+
+13.checkstyle代码规范检查   
+
+14.proguard混淆   
 
