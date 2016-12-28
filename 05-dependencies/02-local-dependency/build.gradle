@@ -1,0 +1,4 @@
+apply plugin  : 'war'
+dependencies {
+	  compile fileTree(dir:'libs',include:'spring*.jar',exclude:'hibernate*.jar')
+}
