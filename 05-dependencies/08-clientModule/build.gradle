@@ -1,0 +1,12 @@
+apply plugin  : 'war'
+
+repositories {
+    jcenter()
+ 	mavenCentral()
+}
+
+dependencies {
+	compile module("com.alibaba:druid:1.0.26") {
+    		dependency("cn.pkaq:ptj.tiger:+")
+    }
+ }
