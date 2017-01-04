@@ -1,0 +1,47 @@
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+// 打包源文件
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+publishing {
+	 // 目标仓库
+    repositories {
+        maven {
+           url "$buildDir/repo"
+        }
+    }	
+
+    publications {	    	
+        mavenJava(MavenPublication) {
+        	// 设置gav属性
+        	groupId 'org.pkaq'
+            artifactId 'tiger'
+            version '1.1'
+
+            from components.java
+            artifact sourceJar
+
+             // 设置pom相关信息
+            pom.withXml {
+                Node root = asNode()              
+                root.appendNode('description', 'bazinga!')
+            }
+        }
+    }
+
+}
+//生成一个元的pom文件
+model {
+    tasks.generatePomFileForMavenJavaPublication {
+        destination = file("$buildDir/generated-pom.xml")
+    }
+}
