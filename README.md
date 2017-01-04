@@ -20,6 +20,7 @@
 - 05 gradleCacheHome  更改gradle的缓存目录   
 - 06 moduleVersion 使用版本号变量以及使用动态版本   
 - 07 transitive   关于依赖传递，如何取消依赖传递以及如何排除个别依赖   
+- 08 clientModule 操作依赖的依赖
 
 **06.properties**  使用gradle操作properties   
 
@@ -37,6 +38,7 @@
 
 **11.specifyName**   打指定名称和版本号的jar包   
 
+**12.env** 根据不同环境打包web项目    
 --------------分隔线----------------    
 这些是未发布的示例   
 12.env-artifactjava项目打不同环境包  

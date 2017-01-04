@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+
+sourceSets {  	
+    main {
+        resources {
+
+            sourceSets.main.resources.srcDirs.each   { 		
+				it.listFiles().each {
+	       		 	 if(it.isDirectory() && it.name != "${env}") {
+	           		 	println "exclude ${it.name}"	   
+	           		 	exclude "${it.name}"
+	       		 	}
+	       		}           		
+            }
+        }
+    }
+}
