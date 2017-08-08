@@ -6,6 +6,8 @@
 示例的内容对你而言或许过于基础，或许觉得冷门，但。。。   
 这些问题撸主都曾经真真的回答过遇到过   
  
+ **00.00**  潜规则
+ 
 **00.peer**  peer not authenticated 错误的究极解决之道 
 
 **03.buildscript**  一个简单的脚本示例 
@@ -39,11 +41,13 @@
 **11.specifyName**   打指定名称和版本号的jar包   
 
 **12.env** 根据不同环境打包web项目    
+
+**13.lifecycle** gradle构建的生命周期
+
 --------------分隔线----------------    
 这些是未发布的示例   
-12.env-artifactjava项目打不同环境包  
 
-13.checkstyle代码规范检查   
+14.checkstyle代码规范检查   
 
-14.proguard混淆   
+15.proguard混淆   
 
