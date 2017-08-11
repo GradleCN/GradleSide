@@ -1,5 +1,5 @@
 ext {
-    bootVersion = "1.4.2.RELEASE"
+    bootVersion = "1.5.6.RELEASE"
     tomcat_embed = "8.5.4"
 }
 
