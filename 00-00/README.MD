@@ -41,7 +41,7 @@ http://www.jianshu.com/p/b7654cb9a457
 
 1.**[gradle-实战文章]**:http://www.jianshu.com/c/9e24d4c23a84
 
-2.**[gradle示例]**:github.com/gradlecn/gradleside
+2.**[gradle示例]**:http://github.com/gradlecn/gradleside
 
 
 ****
