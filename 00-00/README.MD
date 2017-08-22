@@ -24,6 +24,9 @@ http://gradlecn.org/training/troubleshooting.html
 提问的艺术   
 http://www.jianshu.com/p/b7654cb9a457
 
+如何向开源社区提问题   
+https://github.com/seajs/seajs/issues/545   
+
 ###  关于日常
 - 请勿在本群长时间、大量吹水
 - 请勿在本群斗图、超过窗口半屏的非提问问题图不要发
