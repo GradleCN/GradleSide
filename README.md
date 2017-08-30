@@ -47,8 +47,8 @@
 **14.kotlin**   
 - 使用Gradle打包基于kotlin的spring boot项目  
 
-**15.plugin-application**   
-- application插件 - 打可执行jar包  
+**15.plugin-java**   
+- 00 fatjar - 打可执行jar包  
 
 --------------分隔线----------------    
 这些是未发布的示例   
