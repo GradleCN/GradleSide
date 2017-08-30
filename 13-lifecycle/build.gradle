@@ -1,3 +1,7 @@
+buildscript {
+  println "build script block -> ${halu} -> "
+}
+
 project.beforeEvaluate { 
 	println '[hook] - 配置阶段开始前,build.gradle解析前.'
 }
