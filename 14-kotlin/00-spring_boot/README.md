@@ -1,30 +1,30 @@
 Hello Kotlin~
 
-`Kotlin`æ­£å¼å‘å¸ƒä¹‹åå¸å¼•äº†ä¸å°‘ç›®å…‰,å°±è¿`Gradle`åœ¨3.5ç‰ˆæœ¬çš„æ—¶å€™éƒ½æ¨å‡ºäº†åŸºäº`Gradle`çš„dsl.
-ä¸Šæœ‰äº²çˆ¹`jetbrains`,ä¸‹æœ‰å¹²çˆ¹`google`,çœŸæ˜¯æƒ³æ²¡äººå…³æ³¨éƒ½éš¾.
+`Kotlin`ÕıÊ½·¢²¼Ö®ºóÎüÒıÁË²»ÉÙÄ¿¹â,¾ÍÁ¬`Gradle`ÔÚ3.5°æ±¾µÄÊ±ºò¶¼ÍÆ³öÁË»ùÓÚ`Gradle`µÄdsl.
+ÉÏÓĞÇ×µù`jetbrains`,ÏÂÓĞ¸Éµù`google`,ÕæÊÇÏëÃ»ÈË¹Ø×¢¶¼ÄÑ.
 
-ä¸‹é¢å±•ç¤ºäº†å¦‚ä½•ç”¨`Gradle`æ¥æ„å»ºä¸€ä¸ªåŸºäº`Kotlin`çš„`Srping Boot`é¡¹ç›®.
-> p.s å¥½å§,æˆ‘æ‰¿è®¤åŠ spring bootçº¯ç²¹æ˜¯ä¸ºäº†åšçœ¼çƒè¹­çƒ­åº¦çš„
+ÏÂÃæÕ¹Ê¾ÁËÈçºÎÓÃ`Gradle`À´¹¹½¨Ò»¸ö»ùÓÚ`Kotlin`µÄ`Srping Boot`ÏîÄ¿.
+> p.s ºÃ°É,ÎÒ³ĞÈÏ¼Óspring boot´¿´âÊÇÎªÁË²©ÑÛÇò²äÈÈ¶ÈµÄ
 
-1.é¡¹ç›®ç»“æ„
+1.ÏîÄ¿½á¹¹
 src
     |-main
         |-kotlin
 
-è¿™é‡Œæ”¾åœ¨`src/main/java`ä¸‹ä¹Ÿæ˜¯å¯ä»¥çš„
+ÕâÀï·ÅÔÚ`src/main/java`ÏÂÒ²ÊÇ¿ÉÒÔµÄ
 
-2.æ„å»ºè„šæœ¬
+2.¹¹½¨½Å±¾
 
 ```groovy
-// åº”ç”¨kotlinæ’ä»¶
+// Ó¦ÓÃkotlin²å¼ş
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.1.3-2"
 }
-// å®šä¹‰ç‰ˆæœ¬å·
+// ¶¨Òå°æ±¾ºÅ
 ext{
     kotlin_version = '1.1.2-4'
 }
-// å®šä¹‰ä»“åº“
+// ¶¨Òå²Ö¿â
 repositories {
     mavenLocal()
     maven { url"https://repo.spring.io/libs-release" }
@@ -33,11 +33,11 @@ repositories {
 }
 
 dependencies {
-    // kotlinæ ‡å‡†åº“æ”¯æŒ
+    // kotlin±ê×¼¿âÖ§³Ö
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    // ç¼–è¯‘æˆjava8è§„èŒƒå­—èŠ‚ç 
+    // ±àÒë³Éjava8¹æ·¶×Ö½ÚÂë
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    // ...å…¶å®ƒä¾èµ–
+    // ...ÆäËüÒÀÀµ
 
 }
 ```
