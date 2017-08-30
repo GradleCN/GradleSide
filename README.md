@@ -44,13 +44,16 @@
 
 **13.lifecycle** gradle构建的生命周期    
 
-**14.multi-project**   
-- 00 spring_boot 使用Gradle构建基于Kotlin的Spring Boot项目    
+**14.kotlin**   
+- 使用Gradle打包基于kotlin的spring boot项目  
+
+**15.plugin-application**   
+- application插件 - 打可执行jar包  
 
 --------------分隔线----------------    
 这些是未发布的示例   
 
-14.checkstyle代码规范检查   
+16.checkstyle代码规范检查   
 
-15.proguard混淆   
+17.proguard混淆   
 
