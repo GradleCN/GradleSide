@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+     	classpath 'cn.pkaq:ptj.tiger:0.1.0'
+     	classpath group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+    }
+}
+
+import org.apache.commons.lang3.StringUtils;
+
+task x {
+	def sb="     "
+	def sb_bravo ="  - _____ - ||||  "
+
+	println sb_bravo
+	println StringUtils.isEmpty(sb)
+	println StringUtils.isBlank(sb)
+
+	println Tiger.sayHi()
+}	
+

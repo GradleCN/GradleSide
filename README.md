@@ -10,8 +10,10 @@
  
 **00.peer**  peer not authenticated 错误的究极解决之道     
 
-**03.buildscript**  一个简单的脚本示例 
-
+**03.buildscript**  
+- 01 base 一个脚本结构示例  
+- 02 extdepend  引入外部依赖进行构建
+- 
 **04.repositories**   关于仓库的使用，多个仓库，自定义仓库，本地仓库...     
 
 **05.dependencies**  依赖管理相关示例    
