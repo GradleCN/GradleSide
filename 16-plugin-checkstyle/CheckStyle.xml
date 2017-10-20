@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: abc
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="warning"/> 
+   <!-- module的根节点 -->
+  <module name="TreeWalker">
+     <module name="PackageName">
+      <property name="severity" value="warning"/>
+      <property name="format" value="^[a-z]+(\.[a-z_][a-z0-9_]*)*$"/>
+      <message key="name.invalidPattern" value="包名 ''{0}''要匹配 ''{1}''的格式（所有字母全部小写）."/>
+    </module>
+    <module name="TypeName">
+      <property name="severity" value="warning"/>
+      <message key="name.invalidPattern" value="名字 ''{0}'' 要符合 ''{1}''的格式（建议每个单词的首字母大写）."/>
+    </module>
+    <module name="MethodName">
+      <property name="severity" value="warning"/>
+      <property name="format" value="^[a-z][a-zA-Z]*$"/>
+      <message key="name.invalidPattern" value="方法名 ''{0}'' 必须要满足 ''{1}''的格式，建议除首单词外每个单词的首字母大写."/>
+      <message key="method.name.equals.class.name" value="方法名 ''{0}'' 不能等于类名."/>
+    </module>
+    <module name="ParameterName">
+      <property name="severity" value="warning"/>
+      <message key="name.invalidPattern" value="变量 ''{0}''要匹配''{1}''的格式，建议除首单词外的每个单词的首字母大写."/>
+    </module>
+    <module name="MemberName">
+      <property name="severity" value="warning"/>
+      <message key="name.invalidPattern" value="变量 ''{0}'' 要匹配''{1}''的格式（建议除首单词外的单词的首字母小写）."/>
+    </module>
+    <module name="ConstantName">
+      <property name="severity" value="warning"/>
+      <message key="name.invalidPattern" value="常量 ''{0}'' 要匹配''{1}''的格式（字母全部大写可以包含_）."/>
+    </module>
+    <module name="LocalFinalVariableName">
+      <property name="severity" value="warning"/>
+      <message key="name.invalidPattern" value="局部final变量 ''{0}'' 要匹配''{1}''的格式（建议除首单词外的单词的首字母大写）."/>
+    </module>
+    <module name="LocalVariableName">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="PARAMETER_DEF,VARIABLE_DEF"/>
+      <message key="name.invalidPattern" value="局部变量 ''{0}'' 要匹配''{1}''的格式（建议除首单词外的单词的首字母大写）."/>
+    </module>
+    <module name="StaticVariableName">
+      <message key="name.invalidPattern" value="静态非final变量 ''{0}'' 要匹配''{1}''的格式（建议除首单词外的单词的首字母大写）."/>
+    </module>
+    <module name="MethodLength">
+      <property name="severity" value="warning"/>
+      <property name="max" value="80"/>
+      <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+      <message key="maxLen.method" value="方法大小不可以超过80行。"/>
+    </module>
+    <module name="ParameterNumber">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+      <message key="maxParam" value="方法参数个数不能超过7个。"/>
+    </module>
+    <module name="LineLength">
+      <property name="severity" value="warning"/>
+      <property name="max" value="180"/>
+      <message key="maxLineLen" value="每一行的最大长度为180个字符。"/>
+    </module>
+    <module name="CyclomaticComplexity">
+      <property name="severity" value="warning"/>
+      <property name="max" value="4"/>
+      <message key="cyclomaticComplexity" value="方法内嵌套不能超过4级。"/>
+    </module>
+    <module name="BooleanExpressionComplexity">
+      <property name="severity" value="warning"/>
+      <property name="max" value="7"/>
+      <property name="tokens" value="BXOR,BAND,LAND,BOR,LOR"/>
+      <message key="booleanExpressionComplexity" value="布尔表达式的复杂度不能超过7."/>
+    </module>
+    <module name="ArrayTypeStyle">
+      <property name="severity" value="warning"/>
+      <message key="array.type.style" value="数组定义要采取String [] args这种方式。"/>
+    </module>
+    <module name="Indentation">
+      <property name="severity" value="warning"/>
+      <message key="indentation.error" value="你缩进了{1}个空格，正确应该缩进 {2}个空格。"/>
+      <message key="indentation.child.error" value="你缩进了{1}个空格，正确应该缩进 {2}个空格。"/>
+    </module>
+    <module name="AvoidStarImport">
+      <property name="severity" value="warning"/>
+      <message key="import.avoidStar" value="避免引用包时使用*号."/>
+    </module>
+    <module name="IllegalImport">
+      <message key="import.illegal" value="{0}为非法包."/>
+    </module>
+    <module name="RedundantImport">
+      <property name="severity" value="warning"/>
+      <message key="import.same" value="引入了同一个包中的类- {0}。"/>
+      <message key="import.duplicate" value="在第{0,number,integer}行已经引入了此包- {1}。"/>
+      <message key="import.lang" value="{0}，可以去掉。"/>
+    </module>
+    <module name="FinalClass">
+      <property name="severity" value="warning"/>
+      <message key="final.class" value="类{0}要声明是final类，或者删除其私有构造函数."/>
+    </module>
+    <module name="HideUtilityClassConstructor">
+      <property name="severity" value="warning"/>
+      <message key="hide.utility.class" value="实用类(只包含静态属性和静态方法)不应该有一个公共的或者默认构造函数。"/>
+    </module>  
+     <!-- 检查左侧大括号 -->
+    <module name="LeftCurly">
+      <property name="severity" value="warning"/>
+      <message key="line.previous" value="左侧大括号必须放在前一行代码的行尾，不计入到80个字符内"/>
+    </module>
+  <!-- 检查右侧大括号 -->
+    <module name="RightCurly">
+      <property name="severity" value="warning"/>
+      <message key="line.alone" value="右侧大括号必须放在单独一行"/>
+      <message key="line.new" value="右侧大括号必须放在一个新行"/>
+      <message key="line.same" value="右侧大括号与下一语句放在同一行"/>
+    </module>
+ <!--检查代码块是否缺失{}  -->
+    <module name="NeedBraces">
+      <property name="severity" value="warning"/>
+      <message key="needBraces" value="代码中缺失大括号"/>
+    </module>
+ <!-- 代码块中嵌套了代码块 -->
+    <module name="AvoidNestedBlocks">
+      <property name="severity" value="warning"/>
+      <property name="allowInSwitchCase" value="true"/>
+      <message key="block.nested" value="switch…case语句中有嵌套的代码块"/>
+    </module>
+ <!-- 检查尖括号 -->
+    <module name="GenericWhitespace">
+      <property name="severity" value="warning"/>
+      <message key="ws.followed" value="尖括号后面有空格"/>
+      <message key="ws.illegalFollow" value="尖括号后面有不合法的字符"/>
+      <message key="ws.preceded" value="尖括号前面有空格"/>
+    </module>
+ <!--方法参数的空格策略检查-->
+    <module name="MethodParamPad">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="CTOR_DEF,METHOD_CALL,METHOD_DEF,SUPER_CTOR_CALL"/>
+      <message key="ws.preceded" value="''{0}'' 前面有一个空格"/>
+      <message key="ws.notPreceded" value="''{0}'' 前面保留一个空格"/>
+      <message key="line.previous" value="''{0}'' 必须在前一行"/>
+    </module>
+ <!--检查初for语句始化形式是否有空格-->
+    <module name="EmptyForInitializerPad">
+      <property name="severity" value="warning"/>
+      <message key="ws.preceded" value="''{0}'' 前面语句为空"/>
+    </module>
+ <!--检查在某个特定关键字之后应保留空格-->
+    <module name="NoWhitespaceAfter">
+      <property name="severity" value="warning"/>
+      <property name="allowLineBreaks" value="false"/>
+      <property name="tokens" value="DOT,DEC,INC"/>
+      <message key="ws.followed" value="''{0}'' 后面有空格或者换行"/>
+    </module>
+ <!--检查在某个特定关键字之前应保留空格-->
+    <module name="NoWhitespaceBefore">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="SEMI,DOT,POST_DEC,POST_INC"/>
+      <message key="ws.preceded" value="''{0}'' 前面有空格或者换行"/>
+    </module>
+ <!--操作符换行策略检查-->
+    <module name="OperatorWrap">
+      <property name="severity" value="warning"/>
+      <property name="option" value="eol"/>
+      <property name="tokens" value="ASSIGN,BAND,BOR,DIV,EQUAL,GE,GT,LAND,LE,LOR,LT,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,STAR,STAR_ASSIGN"/>
+      <message key="line.previous" value="''{0}'不能单独放在一行 or 前面保留一个空格"/>
+    </module>
+ 
+    <module name="ParenPad">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="LPAREN,RPAREN,CTOR_CALL,METHOD_CALL,SUPER_CTOR_CALL"/>
+      <message key="ws.followed" value="''{0}'' 后面有空格"/>
+      <message key="ws.preceded" value="''{0}''前面有空格"/>
+    </module>
+    <module name="TypecastParenPad">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="RPAREN,TYPECAST"/>
+      <message key="ws.followed" value="''{0}''后面有一个空格，请删除."/>
+      <message key="ws.preceded" value="''{0}''前面有一个空格，请删除."/>
+    </module>
+    <module name="WhitespaceAfter">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="COMMA,SEMI"/>
+      <message key="ws.notFollowed" value="''{0}''后面保留一个空格."/>
+    </module>
+    <module name="WhitespaceAround">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="RCURLY,LITERAL_ASSERT,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE"/>
+      <property name="allowEmptyConstructors" value="true"/>
+      <property name="allowEmptyMethods" value="true"/>
+      <message key="ws.notPreceded" value="''{0}'' 关键字前最少保留一个空格"/>
+      <message key="ws.notFollowed" value="''{0}'' 关键字后保留一个空格"/>
+    </module>
+    <module name="CovariantEquals">
+      <property name="severity" value="warning"/>
+      <message key="covariant.equals" value="既定义了 equals方法，又继承了(java.lang.Object). equals方法，有异常抛出"/>
+    </module>
+    <module name="EmptyStatement">
+      <property name="severity" value="warning"/>
+      <message key="empty.statement" value="；前面缺失语句"/>
+    </module>
+    <module name="EqualsAvoidNull">
+      <property name="severity" value="warning"/>
+      <message key="equals.avoid.null" value="字符串值必须在equals方法的左侧"/>
+    </module>
+    <module name="EqualsHashCode">
+      <property name="severity" value="warning"/>
+      <message key="equals.noHashCode" value="重写了''equals()''方法，缺失了''hashCode()'方法'."/>
+    </module>
+    <module name="HiddenField">
+      <property name="severity" value="warning"/>
+      <property name="ignoreConstructorParameter" value="true"/>
+      <property name="ignoreSetter" value="true"/>
+      <property name="ignoreAbstractMethods" value="true"/>
+      <message key="hidden.field" value="''{0}''局部变量或参数隐藏了类中的变量"/>
+    </module>
+    <module name="MissingSwitchDefault">
+      <property name="severity" value="warning"/>
+      <message key="missing.switch.default" value="switch 语句后边没有 &quot;default&quot; 语句."/>
+    </module>
+    <module name="EmptyBlock">
+      <property name="severity" value="warning"/>
+      <message key="block.empty" value="{0}空的代码块."/>
+      <message key="block.noStmt" value="至少有一条代码语句."/>
+    </module>
+    <module name="RedundantThrows">
+      <property name="severity" value="warning"/>
+      <property name="suppressLoadErrors" value="true"/>
+      <message key="redundant.throws.classInfo" value="无法从 {0}获取类信息."/>
+      <message key="redundant.throws.duplicate" value="Redundant throws: ''{0}'' 重复抛出异常."/>
+      <message key="redundant.throws.subclass" value="Redundant throws: ''{0}'' 是''{1}''的异常子类."/>
+      <message key="redundant.throws.unchecked" value="Redundant throws: ''{0}'' 没有检查异常."/>
+    </module>
+    <module name="SimplifyBooleanExpression">
+      <property name="severity" value="warning"/>
+      <message key="simplify.expression" value="请简化一下表达式."/>
+    </module>
+    <module name="SimplifyBooleanReturn">
+      <property name="severity" value="warning"/>
+      <message key="simplify.boolreturn" value="条件逻辑可去掉."/>
+    </module>
+    <module name="DefaultComesLast">
+      <property name="severity" value="warning"/>
+      <message key="default.comes.last" value="Default 放在 switch 语句的最后."/>
+    </module>
+    <module name="FallThrough">
+      <property name="severity" value="warning"/>
+      <property name="checkLastCaseGroup" value="true"/>
+      <message key="fall.through.last" value="缺少break，return，throw，continue"/>
+      <message key="fall.through" value="缺少break，return，throw，continue"/>
+    </module>
+    <module name="UnnecessaryParentheses">
+      <property name="severity" value="warning"/>
+      <message key="unnecessary.paren.assign" value="任务的右边含有不必要的圆括号"/>
+      <message key="unnecessary.paren.ident" value="标识符''{0}''含有不必要的圆括号."/>
+      <message key="unnecessary.paren.literal" value="''{0}''含有不必要的圆括号."/>
+      <message key="unnecessary.paren.return" value="return 值里含有不必要的圆括号"/>
+      <message key="unnecessary.paren.expr" value="表达式里含有不必要的圆括号"/>
+      <message key="unnecessary.paren.string" value="字符串 {0}含有不必要的圆括号."/>
+    </module>
+    <module name="MultipleVariableDeclarations">
+      <property name="severity" value="warning"/>
+      <message key="multiple.variable.declarations.comma" value="每一行申请一个变量"/>
+      <message key="multiple.variable.declarations" value="每一行允许定义一个变量"/>
+    </module>
+    <module name="AvoidInlineConditionals">
+      <property name="severity" value="warning"/>
+      <message key="inline.conditional.avoid" value="避免在此处嵌入条件"/>
+    </module> 
+  	<module name="PackageDeclaration">
+        <message key="missing.package.declaration" value="缺少包的定义."/>
+        <message key="package.dir.mismatch" value="包定义与目录名不匹配 ''{0}''."/>
+    </module>
+   <!--对类和接口的javadoc注释进行检查-->
+    <module name="JavadocType">
+      <property name="severity" value="warning"/>
+      <message key="type.missingTag" value="Javadoc 类型的注释丢失 {0} 标签."/>
+      <message key="javadoc.missing" value="缺少 Javadoc 注释."/>
+      <message key="javadoc.unusedTagGeneral" value="未使用过的 Javadoc 标签."/>
+      <message key="javadoc.unusedTag" value="未使用过的 {0} 标签for ''{1}''."/>
+      <message key="type.tagFormat" value="Javadoc 类型标签 {0}必须匹配模式 ''{1}''."/>
+    </module>
+ <!--检查方法和构造函数的javadoc-->
+    <module name="JavadocMethod">
+      <property name="severity" value="warning"/>
+      <property name="suppressLoadErrors" value="true"/>
+      <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+      <message key="javadoc.missing" value="缺少Javadoc类型注释"/>
+      <message key="javadoc.expectedTag" value="缺少预期的 {0} tag for ''{1}''的描述."/>
+      <message key="javadoc.return.expected" value="缺少预期的对 @return 标签 的描述."/>
+    </module>
+ <!--public protect private变量的javadoc进行检查-->
+    <module name="JavadocVariable">
+      <property name="severity" value="warning"/>
+      <property name="scope" value="public"/>
+      <message key="javadoc.missing" value="缺少Javadoc 注释."/>
+    </module>
+    <module name="JavadocVariable">
+      <property name="severity" value="warning"/>
+      <property name="scope" value="protected"/>
+      <message key="javadoc.missing" value="缺少Javadoc 注释."/>
+    </module>
+    <module name="JavadocVariable">
+      <property name="severity" value="warning"/>
+      <message key="javadoc.missing" value="缺少Javadoc 注释."/>
+    </module>
+ <!--检查Javadoc的格式-->
+    <module name="JavadocStyle">
+      <property name="severity" value="warning"/>
+      <property name="tokens" value="CLASS_DEF,CTOR_DEF,INTERFACE_DEF,METHOD_DEF,VARIABLE_DEF"/>
+      <message key="javadoc.noperiod" value="第一句话应该以.?!结束."/>
+      <message key="javadoc.missing" value="缺少Javadoc注释."/>
+      <message key="javadoc.unclosedhtml" value="HTML 标签: {0}未结束"/>
+    </module>
+ <!--检查并确保所有的常量中的L都是大写的-->
+    <module name="UpperEll">
+      <property name="severity" value="warning"/>
+    </module>
+  <!--检查常量的命名为大写-->
+    <module name="ConstantName">
+      <property name="severity" value="warning"/>
+    </module>
+  <!--检查消除代码中的幻数-->
+    <module name="MagicNumber">
+      <property name="severity" value="warning"/>
+    </module>
+ <!--对修饰符出现的顺序进行检查-->
+    <module name="UpperEll">
+      <message key="upperEll" value="应该使用大写的 ''L''."/>
+    </module>
+  </module> 
+  <module name="FileLength">
+    <property name="severity" value="warning"/>
+    <property name="max" value="1500"/>
+    <message key="maxLen.file" value="文件大小不能超过1500行（包含注释）"/>
+  </module>
+  <module name="NewlineAtEndOfFile">
+    <property name="fileExtensions" value="java"/>
+    <message key="noNewlineAtEOF" value="文件末尾应该有个空行。"/>
+    <message key="unable.open" value="不能打开 ''{0}''."/>
+  </module>
+  <module name="FileTabCharacter">
+    <property name="severity" value="warning"/>
+    <property name="eachLine" value="true"/>
+    <message key="containsTab" value="本行包含 tab 字符"/>
+  </module>
+</module>
+ 
+
+ 
+
+ 
+
+
