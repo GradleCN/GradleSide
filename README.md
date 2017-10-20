@@ -52,10 +52,15 @@
 **15.plugin-java**   
 - 00 fatjar - 打可执行jar包  
 
+**17.plugin-pmd**   
+- 应用pmd插件使用阿里开发规范检查代码
+
 --------------分隔线----------------    
 这些是未发布的示例   
 
 16.checkstyle代码规范检查   
 
-17.proguard混淆   
+18.findbugs
+
+19.proguard混淆   
 
