@@ -24,26 +24,32 @@ dependencies {
     compile    project(":webpage")
 }
 
+// 不混淆打普通jar
 bootJar {
   mainClassName = 'org.pkaq.Booter'
 }
-
+// 混淆任务
 task proguard(type: ProGuardTask, dependsOn: compileJava) {
+	// 输出混淆前->混淆后的映射
     printmapping "$buildDir/mapping.txt"
+    // 混淆规则文件
     configuration 'proguard-rules.pro'
 
+    // 混淆时依赖的库
     libraryjars files(configurations.compile.findAll {}.collect())
     libraryjars "${System.getProperty('java.home')}/lib/rt.jar"
     libraryjars "${System.getProperty('java.home')}/lib/jce.jar"
 
+    // 混淆输入
     injars sourceSets.main.output
-
-    // 设置输出路径，注意这里输出物为文件（不是默认的jar）
+    // 混淆输出
     outjars "$buildDir/classes-pro"
 }
 
-task bt(type: BootJar){
+// 混淆打包
+task bootPro(type: BootJar){
   dependsOn 'proguard'
+  // 重新组织boot-inf下的文件
   bootInf {
     into('classes') {
         from "$buildDir/classes-pro"
@@ -54,7 +60,12 @@ task bt(type: BootJar){
     }
 
   }
-
+  // 包名
   baseName = "web"
+  // 入口
   mainClassName = 'org.pkaq.Booter'
+
+  doLast {
+      new File("$buildDir/classes-pro").deleteDir()
+  }
 }
