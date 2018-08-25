@@ -55,12 +55,6 @@
 **17.plugin-pmd**   
 - 应用pmd插件使用阿里开发规范检查代码
 
---------------分隔线----------------    
-这些是未发布的示例   
+18.容器化你的Gradle Java项目,jib快速入门
 
-16.checkstyle代码规范检查   
-
-18.findbugs
-
-19.proguard混淆   
-
+19.使用proguard混淆你的sb应用
