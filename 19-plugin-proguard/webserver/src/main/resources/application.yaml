@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    date-format: yyyy-MM-dd
+    view:
+       prefix: /web/
+       suffix: .jsp
+server:
+  context-path: /
+  port: 80

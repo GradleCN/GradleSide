@@ -1,0 +1,60 @@
+buildscript {
+	repositories {
+	    mavenCentral()
+	}
+
+	dependencies {
+	    classpath 'net.sf.proguard:proguard-gradle:6.0.3'
+	}
+}
+plugins {
+    id 'org.springframework.boot' version '2.0.3.RELEASE'
+}
+
+import proguard.gradle.ProGuardTask
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:${bootVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
+    compileOnly "org.projectlombok:lombok:1.16.10"
+
+    compile    project(":webpage")
+}
+
+bootJar {
+  mainClassName = 'org.pkaq.Booter'
+}
+
+task proguard(type: ProGuardTask, dependsOn: compileJava) {
+    printmapping "$buildDir/mapping.txt"
+    configuration 'proguard-rules.pro'
+
+    libraryjars files(configurations.compile.findAll {}.collect())
+    libraryjars "${System.getProperty('java.home')}/lib/rt.jar"
+    libraryjars "${System.getProperty('java.home')}/lib/jce.jar"
+
+    injars sourceSets.main.output
+
+    // 设置输出路径，注意这里输出物为文件（不是默认的jar）
+    outjars "$buildDir/classes-pro"
+}
+
+task bt(type: BootJar){
+  dependsOn 'proguard'
+  bootInf {
+    into('classes') {
+        from "$buildDir/classes-pro"
+    }
+
+    into('lib') {
+        from configurations.runtime
+    }
+
+  }
+
+  baseName = "web"
+  mainClassName = 'org.pkaq.Booter'
+}
