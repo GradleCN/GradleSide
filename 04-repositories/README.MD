@@ -13,7 +13,7 @@ ivy仓库
 
 需要注意的是：如果使用maven本地缓存的话，在maven配置了环境的情况下，由maven安装目录中配置的setting.xml（localRepository节点）中指定，没有的话默认从用户目录的.m2中读取
 
-[最后更新日期:2016/09/23]:下面是收集的一些常用库
+[最后更新日期:2018/09/10]:下面是收集的一些常用库
 ```groovy
 //使用Maven本地缓存
 mavenLocal()
@@ -37,6 +37,11 @@ maven { url"https://repo.spring.io/libs-release" }
 maven {
 	url "http://maven.aliyun.com/nexus/content/groups/public/"
     name = "阿里云"
+}
+
+maven {
+	url "https://mirrors.huaweicloud.com/repository/maven/"
+	name = "华为开源镜像库"
 }
 
 maven {
