@@ -63,9 +63,15 @@
 ****
 ### 提问准备
 
-- 仔细阅读 ！！！！！！！【**[提问的智慧](https://hacpai.com/article/1536377163156)**】！！！！！！
-- 仔细阅读 ！！！！！！！【**[提问的智慧](https://hacpai.com/article/1536377163156)**】！！！！！！
-- 仔细阅读 ！！！！！！！【**[提问的智慧](https://hacpai.com/article/1536377163156)**】！！！！！！
+
+- 仔细阅读 ！！！！！！！【**[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)**】！！！！！！
+- 仔细阅读 ！！！！！！！【**[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)**】！！！！！！
+- 仔细阅读 ！！！！！！！【**[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)**】！！！！！！
+
+
+- 仔细阅读 ！！！！！！！【**[提问的智慧 - 注解版 ](https://hacpai.com/article/1536377163156)**】！！！！！！
+- 仔细阅读 ！！！！！！！【**[提问的智慧 - 注解版](https://hacpai.com/article/1536377163156)**】！！！！！！
+- 仔细阅读 ！！！！！！！【**[提问的智慧 - 注解版](https://hacpai.com/article/1536377163156)**】！！！！！！
 
 
 - 官方文档
