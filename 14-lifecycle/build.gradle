@@ -1,0 +1,35 @@
+buildscript {
+  println "build script block -> ${halu} -> "
+}
+
+project.beforeEvaluate { 
+	println '[hook] - 配置阶段开始前,build.gradle解析前.'
+}
+
+project.afterEvaluate { 
+	println '[hook] - 配置阶段完成后,build.gradle解析后.'	
+}
+
+gradle.taskGraph.whenReady { graph -> 
+	println "[hook] - 关系图已确认,执行阶段开始前"
+} 
+
+gradle.buildFinished { result ->
+	println "[hook] - 构建完成后"
+}
+
+println '[配置阶段] - 配置阶段 00.'
+
+task configured {
+    println '[配置阶段] - 配置阶段 01.'
+}
+
+task test {
+    doFirst {
+      println '[执行阶段] - 最先做.'
+    }
+    doLast {
+      println '[执行阶段] - 最后做.'
+    }
+    println '[配置阶段] 任务.'
+}
