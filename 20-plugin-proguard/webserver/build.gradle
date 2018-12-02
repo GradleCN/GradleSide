@@ -1,0 +1,71 @@
+buildscript {
+	repositories {
+	    mavenCentral()
+	}
+
+	dependencies {
+	    classpath 'net.sf.proguard:proguard-gradle:6.0.3'
+	}
+}
+plugins {
+    id 'org.springframework.boot' version '2.0.3.RELEASE'
+}
+
+import proguard.gradle.ProGuardTask
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:${bootVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
+    compileOnly "org.projectlombok:lombok:1.16.10"
+
+    compile    project(":webpage")
+}
+
+// 不混淆打普通jar
+bootJar {
+  mainClassName = 'org.pkaq.Booter'
+}
+// 混淆任务
+task proguard(type: ProGuardTask, dependsOn: compileJava) {
+	// 输出混淆前->混淆后的映射
+    printmapping "$buildDir/mapping.txt"
+    // 混淆规则文件
+    configuration 'proguard-rules.pro'
+
+    // 混淆时依赖的库
+    libraryjars files(configurations.compile.findAll {}.collect())
+    libraryjars "${System.getProperty('java.home')}/lib/rt.jar"
+    libraryjars "${System.getProperty('java.home')}/lib/jce.jar"
+
+    // 混淆输入
+    injars sourceSets.main.output
+    // 混淆输出
+    outjars "$buildDir/classes-pro"
+}
+
+// 混淆打包
+task bootPro(type: BootJar){
+  dependsOn 'proguard'
+  // 重新组织boot-inf下的文件
+  bootInf {
+    into('classes') {
+        from "$buildDir/classes-pro"
+    }
+
+    into('lib') {
+        from configurations.runtime
+    }
+
+  }
+  // 包名
+  baseName = "web"
+  // 入口
+  mainClassName = 'org.pkaq.Booter'
+
+  doLast {
+      new File("$buildDir/classes-pro").deleteDir()
+  }
+}

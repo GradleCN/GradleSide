@@ -1,0 +1,15 @@
+ext {
+    bootVersion = "2.0.3.RELEASE"
+    tomcat_embed = "8.5.4"
+}
+
+allprojects{
+	apply plugin: 'java'
+
+	
+	repositories {
+	mavenLocal()
+	jcenter()
+	maven { url"https://repo.spring.io/libs-release" }
+	}
+}
