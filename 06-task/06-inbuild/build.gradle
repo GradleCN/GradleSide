@@ -1,0 +1,5 @@
+task copyTask(type: Copy) {
+    from '.'
+    into 'abc'
+    include 'in.txt'
+}

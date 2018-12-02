@@ -1,0 +1,23 @@
+
+class Inner extends DefaultTask {
+    String words = 'Inner'
+
+    @TaskAction
+    def action1() { println words + name }
+
+    @TaskAction
+    def action2() { println words + ' InnerTom'  }
+}
+
+
+task say(type: Hello) {
+    words = 'Aloha '
+    doFirst { println 'fisrt blood' }
+    doLast { println 'double kill' }
+}
+
+task sayIn(type: Inner) {
+    words = 'Aloha Inner '
+    doFirst { println 'Inner blood' }
+    doLast { println 'Inner kill' }
+}

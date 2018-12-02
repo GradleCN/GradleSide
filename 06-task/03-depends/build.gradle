@@ -1,0 +1,25 @@
+task one{
+	group 'timo'
+     doLast {
+        println "Hello frist"
+    }
+}
+task two(dependsOn: one){
+     doLast {
+        println "Hello two"
+    }
+}
+task three{
+	dependsOn two
+     doLast {
+        println "Hello three"
+    }
+}
+task four{
+	 mustRunAfter three
+     doLast {
+        println "Hello four"
+    }
+  
+}
+three.finalizedBy four

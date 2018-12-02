@@ -1,0 +1,22 @@
+task one{
+	enabled false
+    doLast{
+         println "Hello frist"
+    }
+}
+task two(dependsOn:one){
+    doLast{  
+         println "Hello two"
+    }
+    
+    inputs.upToDateWhen{true}
+    outputs.upToDateWhen{true}
+
+}
+
+task three{
+    dependsOn two
+     doLast {
+        println "Hello three"
+    }
+}
