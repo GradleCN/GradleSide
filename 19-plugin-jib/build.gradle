@@ -1,0 +1,17 @@
+plugins {
+  id 'com.google.cloud.tools.jib' version '0.9.2'
+}
+//应用插件
+apply plugin: 'java'
+
+
+//定义仓库
+repositories {
+    jcenter()
+}
+
+//定义依赖
+dependencies {
+    compile "cn.pkaq:ptj.tiger:+"
+}
+
