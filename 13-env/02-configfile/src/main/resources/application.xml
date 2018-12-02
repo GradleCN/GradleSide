@@ -1,0 +1,6 @@
+<xml>
+	<db>
+		<dbuser value="${db.username}">${db.username}</dbuser>
+		<dbuser value="${db.password}">${db.password}</dbuser>
+	</db>
+</xml>

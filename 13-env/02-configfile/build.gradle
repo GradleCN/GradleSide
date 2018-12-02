@@ -1,0 +1,13 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'java'
+
+
+processResources {
+    println "==> Load configuration for $env"
+    def config =  new ConfigSlurper(env).parse(file("config.groovy").toURI().toURL()).toProperties()
+
+    from(sourceSets.main.resources.srcDirs) {
+        filter(ReplaceTokens, tokens: config, beginToken : '${', endToken : '}')
+    }
+}
