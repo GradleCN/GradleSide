@@ -1,0 +1,18 @@
+
+apply plugin :'java'
+//解决警告：编码 GBK 的不可映射字符
+//指定UTF-8编码
+//法 . 1 .
+tasks.withType(JavaCompile) { 
+//    options.encoding = "UTF-8" 
+} 
+
+//下面这种写法也可以，与上面任选其一即可
+//法 . 2 .
+//[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+
+//下面这种写法也可以，与上面任选其一即可
+//法 . 3 . 此种写法是官方推荐的，至少当时那个版本的userguide里是
+//此法不仅可以解决中文注释引起的编译不通过乱码，而且对于项目中存在中文文件导致的乱码也可以解决
+//调用命令的时候添加-D参数 ，-Dfile.encoding=UTF-8
+
