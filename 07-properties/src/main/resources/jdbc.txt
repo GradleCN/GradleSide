@@ -1,0 +1,3 @@
+#ConfigFile Update:Wed Dec 30 09:24:45 CST 2015
+#Wed Dec 30 09:24:45 CST 2015
+jdbc.user=frank
