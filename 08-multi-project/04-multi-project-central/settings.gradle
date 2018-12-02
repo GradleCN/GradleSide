@@ -1,9 +1,0 @@
-include 'base','main'
-
-println "< ---- build init ---- > "
-
-def initFunc(){
-	println "<!-- three little birds -->"
-}
-
-initFunc()

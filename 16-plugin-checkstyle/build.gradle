@@ -1,8 +1,0 @@
-apply plugin: 'java'
- //所有项目共用一个checkstyle配置
-checkstyle {
- 	configFile = file("${rootDir}/CheckStyle.xml")
-    ignoreFailures = true
-   //采用最新版会报错
-   //toolVersion = "7.1"
-}

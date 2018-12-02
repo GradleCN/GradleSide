@@ -1,9 +1,0 @@
-include 'base','main'
-
-println "< ---- [初始化阶段] ---- > "
-
-def initFunc(){
-	println "<-- [初始化阶段] - 自定义方法 -->"
-}
-
-initFunc()

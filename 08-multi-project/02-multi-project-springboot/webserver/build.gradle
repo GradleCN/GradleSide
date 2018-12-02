@@ -1,7 +1,0 @@
-dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web:${bootVersion}",
-            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcat_embed}"
-    compileOnly "org.projectlombok:lombok:1.16.10"
-
-    compile    project(":webpage")
-}

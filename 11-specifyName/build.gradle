@@ -1,5 +1,0 @@
-apply plugin: 'java'
-//包名
-archivesBaseName="kitty"
-//版本号
-version = '1.0.0'
