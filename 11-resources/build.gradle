@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+
+war {
+   //指定包名,没错  这样也行 多查API
+   baseName = 'supprise'
+
+   //指定包含的文件
+   //include xxx.x
+   
+   from('src/main/java') {
+   	 include 'config/**/*.xml'
+   }
+
+   from('src/main/java') {
+   	 include 'prop/**/*.properties'
+   }
+}
