@@ -1,0 +1,5 @@
+subprojects {
+    apply plugin: 'java'
+    group = 'org.gradle.sample.dag'
+    version = '1.0'
+}

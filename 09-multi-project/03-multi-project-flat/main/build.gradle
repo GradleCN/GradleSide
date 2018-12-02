@@ -1,0 +1,17 @@
+apply plugin: 'war'
+
+dependencies {
+    compile  project(':base')
+}
+
+allprojects {
+    group = 'org.pkaq.gradle.multi.flat'
+    version = '1.0'
+
+     repositories {
+        maven { url"https://repo.spring.io/libs-release" }
+        jcenter()
+        mavenCentral()
+    }
+}
+

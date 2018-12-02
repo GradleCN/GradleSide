@@ -1,0 +1,8 @@
+apply plugin: 'war'
+
+dependencies {
+    compile  project(':base'),
+             project(':webcore'),
+             project(':webmanagement')
+}
+
