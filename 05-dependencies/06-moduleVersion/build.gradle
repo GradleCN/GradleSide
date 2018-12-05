@@ -13,6 +13,7 @@ repositories {
 //定义依赖
 dependencies {
 	//采用局部变量管理版本号
+	// + 表示 始终检查该依赖的最新版本
 	def apache="+"
     compile     "org.springframework.boot:spring-boot-starter-web:${bootVersion}",
                 //jpa
