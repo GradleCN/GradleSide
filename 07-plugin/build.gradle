@@ -1,0 +1,42 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.0'
+}
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = 'org.pakq'
+archivesBaseName="plugin"
+version = '1.0'
+
+pluginBundle {
+    website = 'https://github.com/GradleCN/GradleSide'
+    vcsUrl = 'https://github.com/GradleCN/GradleSide'
+    tags = ['买了佛冷', 'pluginlearn']
+}
+gradlePlugin {
+    plugins {
+        foLeng {
+            id = 'org.pkaq.foLeng'
+            displayName = 'Mai le fo leng?'
+            description = '<a plugin demo>'
+            implementationClass = 'org.pkaq.FoLengPlugin'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile localGroovy() 
+    compile gradleApi() 
+}
+// 发布插件到本地目录
+uploadArchives {
+    repositories {
+        mavenDeployer {
+             repository(url: uri('/opt/repo'))
+        }
+    }
+}
