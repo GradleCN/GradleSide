@@ -5,6 +5,13 @@
 
 入群请在昵称前注明主攻方向/语言的首字母   
 
+如 
+- Android -> A
+- JavaEE -> J
+- Groovy -> G
+- Kotlin -> K
+- Android & JavaEE -> AJ
+
 
 # 入门必读
 为森么此章使用了一号标题 我想你已经明白了吧
@@ -18,12 +25,8 @@
 
 2.**[gradle示例]**: http://github.com/gradlecn/gradleside
 
-如 
-- Android -> A
-- JavaEE -> J
-- Groovy -> G
-- Kotlin -> K
-- Android & JavaEE -> AJ
+
+> 强烈推荐阅读 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)、[《如何向开源社区提问题》](https://github.com/seajs/seajs/issues/545) 和 [《如何有效地报告 Bug》](http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html)、[《如何向开源项目提交无法解答的问题》](https://zhuanlan.zhihu.com/p/25795393)，更好的问题更容易获得帮助。
 
 
 本群为 **非盈利** 民间组织   ！！！！！！   
