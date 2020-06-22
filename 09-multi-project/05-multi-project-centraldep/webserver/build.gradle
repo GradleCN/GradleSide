@@ -1,0 +1,5 @@
+dependencies {
+    compile "${lib.spring}"
+
+    compile project(":webpage")
+}

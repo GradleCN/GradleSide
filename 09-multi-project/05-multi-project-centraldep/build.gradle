@@ -1,0 +1,30 @@
+ext {
+    springBootVersion = '2.3.1.RELEASE'
+    lombok = "1.18.12"
+
+    lib = ["spring" : "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+		   // lombok
+           "lombok" : "org.projectlombok:lombok:${lombok}"            
+    ]
+}
+
+
+// 用allprojects方法给所有的项目添加group和version属性
+allprojects {
+    group = 'org.pkaq'
+    version = '1.0'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        maven { url"https://repo.spring.io/libs-release" }
+        jcenter()
+        mavenCentral()
+    }
+	dependencies {
+	    implementation "${lib.lombok}"
+		annotationProcessor "${lib.lombok}"
+	}
+}
